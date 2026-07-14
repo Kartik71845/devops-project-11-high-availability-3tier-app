@@ -1,0 +1,9 @@
+services:
+  frontend:
+    image: 783490811281.dkr.ecr.us-east-1.amazonaws.com/frontend:v1
+    container_name: frontend
+
+    restart: always
+
+    ports:
+      - "80:80"

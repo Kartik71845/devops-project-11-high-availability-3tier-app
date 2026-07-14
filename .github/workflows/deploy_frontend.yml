@@ -1,0 +1,11 @@
+name: frontend-deploy
+on:
+  push:
+    branches:
+      - main
+      - test
+
+jobs:
+    deploy-frontend:
+        runs-on: ubuntu-latest
+        steps
