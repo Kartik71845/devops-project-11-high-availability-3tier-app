@@ -6,6 +6,33 @@ on:
       - test
 
 jobs:
-    deploy-frontend:
+  deploy-frontend:
         runs-on: ubuntu-latest
-        steps
+        steps:
+          - uses: actions/checkout@v3
+          - name: configure AWS credentials
+            uses: aws-actions/configure-aws-credentials@v2
+            with:
+              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              aws-region: us-east-1
+            
+          - name: Docker build tag and push to ECR
+            run: |
+              echo "Building Docker image..."
+              docker build -t frontend:${{ github.sha }} .
+              echo "Logging in to Amazon ECR..."
+              aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 783490811281.dkr.ecr.us-east-1.amazonaws.com
+              echo "Tagging Docker image..."
+              docker tag frontend:${{ github.sha }} 783490811281.dkr.ecr.us-east-1.amazonaws.com/frontend:${{ github.sha }}
+              docker tag frontend:${{ github.sha }} 783490811281.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+              echo "Pushing Docker image to ECR..."
+              docker push 783490811281.dkr.ecr.us-east-1.amazonaws.com/frontend:${{ github.sha }}
+              docker push 783490811281.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+
+
+          - name: frontend instance refresh
+            run: |
+              echo "Refreshing frontend instance..."
+              aws autoscaling update-auto-scaling-group --auto-scaling-group-name frontend-asg --force-refresh
+           
