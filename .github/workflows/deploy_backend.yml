@@ -32,5 +32,4 @@ jobs:
     
       - name: backend instance refresh
         run: |
-          echo "Refreshing backend instance..."
-          aws autoscaling update-auto-scaling-group --auto-scaling-group-name backend-asg 
+           aws autoscaling start-instance-refresh --auto-scaling-group-name backend-asg

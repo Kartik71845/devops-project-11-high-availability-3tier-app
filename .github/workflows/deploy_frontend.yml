@@ -33,6 +33,4 @@ jobs:
 
           - name: frontend instance refresh
             run: |
-              echo "Refreshing frontend instance..."
-              aws autoscaling update-auto-scaling-group --auto-scaling-group-name frontend-asg 
-           
+               aws autoscaling start-instance-refresh --auto-scaling-group-name frontend-asg           
