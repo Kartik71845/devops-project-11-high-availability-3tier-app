@@ -20,7 +20,7 @@ jobs:
       - name: Docker build tag and push to ECR
         run: |
           echo "Building Docker image..."
-          docker build -t backend:${{ github.sha }} .
+          docker build -t backend:${{ github.sha }} ./backend
           echo "Logging in to Amazon ECR..."
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 783490811281.dkr.ecr.us-east-1.amazonaws.com
           echo "Tagging Docker image..."
