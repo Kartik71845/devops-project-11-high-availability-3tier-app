@@ -3,7 +3,7 @@ node_modules/
 dist/
 backend/.env.*
 
-Terraform/terraform.tfstate
-Terraform/terraform.tfstate.backup
-Terraform/.terraform.lock.hcl
+Terraform/.terraform/
+Terraform/*.tfstate
+Terraform/*.tfstate.*
 Terraform/terraform.tfvars

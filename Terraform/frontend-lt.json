@@ -1,0 +1,18 @@
+{
+    "IamInstanceProfile": {
+        "Name": "ecr-access-instance-profile"
+    },
+    "NetworkInterfaces": [
+        {
+            "AssociatePublicIpAddress": true,
+            "DeviceIndex": 0,
+            "Groups": [
+                "sg-0970bf717ce008284"
+            ],
+            "NetworkCardIndex": 0
+        }
+    ],
+    "ImageId": "ami-0b6d9d3d33ba97d99",
+    "InstanceType": "t3.micro",
+    "UserData": "IyEvYmluL2Jhc2gNCmFwdC1nZXQgdXBkYXRlIC15DQphcHQtZ2V0IGluc3RhbGwgLXkgZG9ja2VyLmlvDQphcHQtZ2V0IGluc3RhbGwgLXkgYXdzY2xpDQpzeXN0ZW1jdGwgZW5hYmxlIC0tbm93IGRvY2tlcg0KZG9ja2VyIGxvZ2luIC11IEFXUyAtcCAkKGF3cyBlY3IgZ2V0LWxvZ2luLXBhc3N3b3JkIC0tcmVnaW9uIHVzLWVhc3QtMSkgNzgzNDkwODExMjgxLmRrci5lY3IudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20NCmRvY2tlciBwdWxsIDc4MzQ5MDgxMTI4MS5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2Zyb250ZW5kOmxhdGVzdA0KZG9ja2VyIHJ1biAtZCAtcCA4MDo4MCA3ODM0OTA4MTEyODEuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9mcm9udGVuZDpsYXRlc3QNCg=="
+}
