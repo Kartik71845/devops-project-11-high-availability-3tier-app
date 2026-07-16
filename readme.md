@@ -4,7 +4,12 @@ A production-inspired **High Availability 3-Tier Application** deployed on AWS u
 
 The infrastructure is provisioned using **Terraform**, while **GitHub Actions** automates the complete CI/CD pipeline. Docker images are built, tested, pushed to Amazon ECR, and deployed automatically using **Auto Scaling Instance Refresh**, providing rolling deployments with minimal downtime.
 
+## 📷 Architecture Diagrams
+
+- CI/CD Pipeline for Automated Docker Deployment
+- High Availability 3-Tier Application Request Flow
 ---
+
 ![alt text](<Untitled - 16 July 2026 at 22.06.53.gif>)
 
 
@@ -196,12 +201,6 @@ If a deployment fails:
 
 ---
 
-## 📷 Architecture Diagrams
-
-- CI/CD Pipeline for Automated Docker Deployment
-- High Availability 3-Tier Application Request Flow
-
----
 
 ## 🚀 Future Improvements
 
@@ -212,5 +211,14 @@ If a deployment fails:
 - End-to-End Integration Testing
 
 ---
+
+## GitHub
+
+https://github.com/Kartik71845
+
+
+## LinkedIn
+
+https://www.linkedin.com/in/kartik-bhandari-623622319/
 
 ## ⭐ If you found this project helpful, consider giving it a star!
